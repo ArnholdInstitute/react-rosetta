@@ -1,0 +1,347 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rosetta should accept a hardoded locale. 1`] = `
+<Rosetta
+  dictionary={false}
+  locale="es"
+  translations={
+    Object {
+      "en": Object {
+        "foo": "Hello",
+      },
+      "es": Object {
+        "foo": "Hola",
+      },
+    }
+  }
+>
+  <Translator
+    className={null}
+    defaultTranslation=""
+    id="foo"
+    onClick={null}
+    style={null}
+    tag="span"
+  >
+    <span>
+      Hola
+    </span>
+  </Translator>
+</Rosetta>
+`;
+
+exports[`Rosetta should not throw an error if no translations are found for the locale. 1`] = `
+<Rosetta
+  dictionary={false}
+  locale="fr"
+  translations={
+    Object {
+      "en": Object {
+        "foo": "Hello",
+      },
+      "es": Object {
+        "foo": "Hola",
+      },
+    }
+  }
+>
+  <Translator
+    className={null}
+    defaultTranslation=""
+    id="foo"
+    onClick={null}
+    style={null}
+    tag="span"
+  >
+    <span>
+      foo
+    </span>
+  </Translator>
+</Rosetta>
+`;
+
+exports[`Translator should be able to apply className, onClick, and Style. 1`] = `
+<Rosetta
+  dictionary={false}
+  locale={null}
+  translations={
+    Object {
+      "en": Object {
+        "foo": "bar",
+      },
+      "es": Object {
+        "foo": "Hola",
+      },
+    }
+  }
+>
+  <Translator
+    className="foo"
+    defaultTranslation=""
+    id="foo"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "red",
+      }
+    }
+    tag="span"
+  >
+    <span
+      className="foo"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "red",
+        }
+      }
+    >
+      bar
+    </span>
+  </Translator>
+</Rosetta>
+`;
+
+exports[`Translator should be able to translate a phrase using a dictionary. 1`] = `
+<Rosetta
+  dictionary={true}
+  locale={null}
+  translations={
+    Object {
+      "Hello World": Object {
+        "en": "Hi Earth",
+        "es": "Hola Mundo",
+      },
+    }
+  }
+>
+  <Translator
+    className={null}
+    defaultTranslation=""
+    id={null}
+    onClick={null}
+    style={null}
+    tag="span"
+  >
+    <span>
+      Hi Earth
+    </span>
+  </Translator>
+</Rosetta>
+`;
+
+exports[`Translator should be able to translate a sentence using a dictionary. 1`] = `
+<Rosetta
+  dictionary={true}
+  locale="es"
+  translations={
+    Object {
+      "Hello": Object {
+        "en": "Hi",
+        "es": "Hola",
+      },
+      "World": Object {
+        "en": "Earth",
+        "es": "Mundo",
+      },
+    }
+  }
+>
+  <Translator
+    className={null}
+    defaultTranslation=""
+    id={null}
+    onClick={null}
+    style={null}
+    tag="span"
+  >
+    <span>
+      Hola Mundo
+    </span>
+  </Translator>
+</Rosetta>
+`;
+
+exports[`Translator should be able to translate a single word using a dictionary. 1`] = `
+<Rosetta
+  dictionary={true}
+  locale={null}
+  translations={
+    Object {
+      "Hello": Object {
+        "en": "Hi",
+        "es": "Hola",
+      },
+    }
+  }
+>
+  <Translator
+    className={null}
+    defaultTranslation=""
+    id={null}
+    onClick={null}
+    style={null}
+    tag="span"
+  >
+    <span>
+      Hi
+    </span>
+  </Translator>
+</Rosetta>
+`;
+
+exports[`Translator should be able to translate by Id. 1`] = `
+<Rosetta
+  dictionary={false}
+  locale={null}
+  translations={
+    Object {
+      "en": Object {
+        "foo": "Hello",
+      },
+      "es": Object {
+        "foo": "Hola",
+      },
+    }
+  }
+>
+  <Translator
+    className={null}
+    defaultTranslation=""
+    id="foo"
+    onClick={null}
+    style={null}
+    tag="span"
+  >
+    <span>
+      Hello
+    </span>
+  </Translator>
+</Rosetta>
+`;
+
+exports[`Translator should fall back to the defaultTranslation if no matches are found and a default is defined. 1`] = `
+<Rosetta
+  dictionary={true}
+  locale={null}
+  translations={
+    Object {
+      "Hello": Object {
+        "en": "Hi",
+        "es": "Hola",
+      },
+      "World": Object {
+        "en": "Earth",
+        "es": "Mundo",
+      },
+    }
+  }
+>
+  <Translator
+    className={null}
+    defaultTranslation="Bar"
+    id={null}
+    onClick={null}
+    style={null}
+    tag="span"
+  >
+    <span>
+      Bar
+    </span>
+  </Translator>
+</Rosetta>
+`;
+
+exports[`Translator should fall back to the id if no matches are found in the translations. 1`] = `
+<Rosetta
+  dictionary={false}
+  locale="es"
+  translations={
+    Object {
+      "en": Object {
+        "foo": "Hello",
+      },
+      "es": Object {
+        "foo": "Hola",
+      },
+    }
+  }
+>
+  <Translator
+    className={null}
+    defaultTranslation=""
+    id="bar"
+    onClick={null}
+    style={null}
+    tag="span"
+  >
+    <span>
+      bar
+    </span>
+  </Translator>
+</Rosetta>
+`;
+
+exports[`Translator should fall back to the original word if no matches are found in the translations (by dictionary). 1`] = `
+<Rosetta
+  dictionary={true}
+  locale={null}
+  translations={
+    Object {
+      "Hello": Object {
+        "en": "Hi",
+        "es": "Hola",
+      },
+      "World": Object {
+        "en": "Earth",
+        "es": "Mundo",
+      },
+    }
+  }
+>
+  <Translator
+    className={null}
+    defaultTranslation=""
+    id={null}
+    onClick={null}
+    style={null}
+    tag="span"
+  >
+    <span>
+      Foo
+    </span>
+  </Translator>
+</Rosetta>
+`;
+
+exports[`Translator should render the default translation if no children are defined and using a dictionary 1`] = `
+<Rosetta
+  dictionary={true}
+  locale={null}
+  translations={
+    Object {
+      "Hello": Object {
+        "en": "Hi",
+        "es": "Hola",
+      },
+      "World": Object {
+        "en": "Earth",
+        "es": "Mundo",
+      },
+    }
+  }
+>
+  <Translator
+    className={null}
+    defaultTranslation="Bar"
+    id={null}
+    onClick={null}
+    style={null}
+    tag="span"
+  >
+    <span>
+      Bar
+    </span>
+  </Translator>
+</Rosetta>
+`;

@@ -1,0 +1,49 @@
+{
+  "name": "react-rosetta",
+  "version": "1.0.1",
+  "description": "A react library for translating text based on your current locale.",
+  "main": "lib/index.js",
+  "scope": "@arnhold-institute",
+  "scripts": {
+    "prepare": "babel ./src --out-dir ./lib --ignore **/*.test.js",
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArnholdInstitute/react-rosetta.git"
+  },
+  "keywords": [
+    "React",
+    "Localization",
+    "Intl",
+    "Jest"
+  ],
+  "author": "Kyle Landell <kyle.landell@mssm.edu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArnholdInstitute/react-rosetta/issues"
+  },
+  "homepage": "https://github.com/ArnholdInstitute/react-rosetta#readme",
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^2.9.1",
+    "enzyme-to-json": "^1.5.1",
+    "jest": "^20.0.4",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1"
+  },
+  "files": [
+      "src/",
+      "lib/"
+  ]
+}

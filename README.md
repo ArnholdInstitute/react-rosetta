@@ -123,12 +123,10 @@ import { Translator, withRosetta } from 'react-rosetta';
 class Hello extends Component {
     render() {
         return (
-            <Rosetta translations={translations} dictionary>
-                <div>
-                    <Translator tag="div" defaultTranslation="Foo">Hello World</Translator>
-                    <Translator tag="p">Something else</Translator>
-                </div>
-            </Rosetta>
+            <div>
+                <Translator tag="div" defaultTranslation="Foo">Hello World</Translator>
+                <Translator tag="p">Something else</Translator>
+            </div>
         );
     }
 }

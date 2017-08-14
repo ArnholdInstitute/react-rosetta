@@ -7,6 +7,7 @@ export default class Translator extends Component {
         className: string,
         defaultTranslation: string,
         onClick: func,
+        renderer: func,
         style: objectOf(oneOfType([number, string])),
         tag: oneOf(['a', 'b', 'button', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '1i', 'p', 'span', 'strong']),
     }
@@ -16,8 +17,9 @@ export default class Translator extends Component {
         className: null,
         defaultTranslation: '',
         onClick: null,
+        renderer: (text) => text,
         style: null,
-        tag: 'span',
+        tag: 'span'
     }
 
     static contextTypes = {
@@ -35,9 +37,9 @@ export default class Translator extends Component {
     }
 
     get translation() {
-        const { defaultTranslation, id } = this.props;
+        const { defaultTranslation, id, renderer } = this.props;
         const { translations } = this.context;
-        return (id ? (translations[id] || id) : this.translateChildren()) || defaultTranslation;
+        return renderer((id ? (translations[id] || id) : this.translateChildren()) || defaultTranslation);
     }
 
     translateChildren() {

@@ -19,9 +19,9 @@ export default class Rosetta extends Component {
         translations: object,
     }
 
-    constructor(props) {
-        super(props);
-        this.locale = props.locale || navigator.language;
+    get locale() {
+        const {locale} = this.props;
+        return locale || (typeof navigator !== 'undefined' && navigator.language) || 'en';
     }
 
     getChildContext() {

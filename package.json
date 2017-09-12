@@ -1,6 +1,6 @@
 {
   "name": "react-rosetta",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "A react library for translating text based on your current locale.",
   "main": "lib/index.js",
   "scope": "@arnhold-institute",

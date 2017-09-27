@@ -23,7 +23,7 @@ export default class Rosetta extends Component {
         const {locale} = this.props;
         return (
             locale ||
-            (typeof navigator !== 'undefined' && navigator.languages)[0] ||
+            (typeof navigator !== 'undefined' && (navigator.languages ? navigator.languages[0] : navigator.language)) ||
             (typeof process !== 'undefined' && process.locale) ||
             'en'
         );

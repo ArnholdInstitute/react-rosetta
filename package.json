@@ -3,7 +3,6 @@
   "version": "1.1.2",
   "description": "A react library for translating text based on your current locale.",
   "main": "lib/index.js",
-  "scope": "@arnhold-institute",
   "scripts": {
     "prepare": "babel ./src --out-dir ./lib --ignore **/*.test.js",
     "test": "jest --coverage"
@@ -41,6 +40,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.1",
+    "flow-bin": "^0.68.0",
     "jest": "^23.0.0-alpha.0",
     "jest-cli": "^23.0.0-alpha.0"
   },

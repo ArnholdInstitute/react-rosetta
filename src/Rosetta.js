@@ -1,47 +1,64 @@
+// @flow
 import React, { Children, PureComponent } from 'react';
-import { bool, object, objectOf, string } from 'prop-types';
+import type { Node } from 'react';
 
-export default class Rosetta extends PureComponent {
-  static propTypes = {
-    dictionary: bool,
-    locale: string,
-    translations: objectOf(object),
-  }
+type LocaleTranslations = {
+  [key: string]: string,
+};
 
-  static defaultProps = {
-    dictionary: false,
-    locale: null,
-    translations: {},
-  }
+type Translations = {
+  [locale: string]: LocaleTranslations,
+};
 
+type Props = {
+  children: Node,
+  locale?: string,
+  translations: Translations,
+};
+
+/*
   static childContextTypes = {
     locale: string,
     translations: object,
   }
 
-  get locale() {
-    const {locale} = this.props;
-    return (
-      locale ||
-      (typeof navigator !== 'undefined' && (navigator.languages ? navigator.languages[0] : navigator.language)) ||
-      (typeof process !== 'undefined' && process.locale) ||
-      'en'
-    );
-  }
-
-  getChildContext() {
+    getChildContext() {
     return {
       locale: this.locale,
       translations: this.translations,
     };
   }
+  */
 
-  get translations() {
-    const { dictionary, translations } = this.props;
+class Rosetta extends PureComponent<Props> {
+  static defaultProps = {
+    locale: null,
+  }
 
-    if (dictionary) {
-      return translations;
+  defaultLocale = 'en';
+
+  get locale(): string {
+    const { locale } = this.props;
+    let ret = locale;
+
+    // if the locale isn't defined as a prop,
+    // attempt to pull it out of the window navigator
+    if (!ret && typeof window !== 'undefined') {
+      ret = navigator.languages ? navigator.languages[0] : navigator.language;
     }
+
+    // if the locale is STILL unknown, just fallback
+    // to english bcause that is what I speak
+    if (!ret) {
+      ret = this.defaultLocale;
+    }
+
+    // finally, return the locale
+    return ret;
+  }
+
+  get translations(): LocaleTranslations {
+    const { translations } = this.props;
     return translations[this.locale] || translations[this.locale.split('-')[0]] || {};
   }
 
@@ -49,3 +66,5 @@ export default class Rosetta extends PureComponent {
     return Children.only(this.props.children);
   }
 }
+
+export default Rosetta;

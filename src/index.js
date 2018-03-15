@@ -1,9 +1,3 @@
-import Rosetta from './Rosetta';
-import Translator from './Translator';
-import withRosetta from './withRosetta';
-
-export {
-    Rosetta,
-    Translator,
-    withRosetta,
-};
+export { default as Rosetta } from './Rosetta';
+export { default as Translator } from './Translator';
+export { default as withRosetta } from './withRosetta';

@@ -18,7 +18,7 @@
     "Intl",
     "Jest"
   ],
-  "author": "Kyle Landell <kyle.landell@mssm.edu>",
+  "author": "Kyle Landell <kyle.landell@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ArnholdInstitute/react-rosetta/issues"
@@ -26,24 +26,26 @@
   "homepage": "https://github.com/ArnholdInstitute/react-rosetta#readme",
   "dependencies": {
     "prop-types": "^15.5.10",
-    "react": "^15.6.1"
+    "react": "^16.3.0-alpha.2",
+    "react-dom": "^16.3.0-alpha.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.25.0",
+    "@babel/cli": "^7.0.0-beta.41",
+    "@babel/core": "^7.0.0-beta.41",
+    "@babel/preset-env": "^7.0.0-beta.41",
+    "@babel/preset-flow": "^7.0.0-beta.41",
+    "@babel/preset-react": "^7.0.0-beta.41",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.0.0-alpha.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "enzyme": "^2.9.1",
-    "enzyme-to-json": "^1.5.1",
-    "jest": "^20.0.4",
-    "react-dom": "^15.6.1",
-    "react-test-renderer": "^15.6.1"
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.1",
+    "jest": "^23.0.0-alpha.0",
+    "jest-cli": "^23.0.0-alpha.0"
   },
   "files": [
-      "src/",
-      "lib/"
+    "src/",
+    "lib/"
   ]
 }

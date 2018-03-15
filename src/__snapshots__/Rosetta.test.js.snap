@@ -20,6 +20,7 @@ exports[`Rosetta should accept a hardoded locale. 1`] = `
     defaultTranslation=""
     id="foo"
     onClick={null}
+    renderer={[Function]}
     style={null}
     tag="span"
   >
@@ -50,6 +51,7 @@ exports[`Rosetta should not throw an error if no translations are found for the 
     defaultTranslation=""
     id="foo"
     onClick={null}
+    renderer={[Function]}
     style={null}
     tag="span"
   >
@@ -80,6 +82,7 @@ exports[`Translator should be able to apply className, onClick, and Style. 1`] =
     defaultTranslation=""
     id="foo"
     onClick={[Function]}
+    renderer={[Function]}
     style={
       Object {
         "background": "red",
@@ -120,6 +123,7 @@ exports[`Translator should be able to translate a phrase using a dictionary. 1`]
     defaultTranslation=""
     id={null}
     onClick={null}
+    renderer={[Function]}
     style={null}
     tag="span"
   >
@@ -152,6 +156,7 @@ exports[`Translator should be able to translate a sentence using a dictionary. 1
     defaultTranslation=""
     id={null}
     onClick={null}
+    renderer={[Function]}
     style={null}
     tag="span"
   >
@@ -180,6 +185,7 @@ exports[`Translator should be able to translate a single word using a dictionary
     defaultTranslation=""
     id={null}
     onClick={null}
+    renderer={[Function]}
     style={null}
     tag="span"
   >
@@ -210,6 +216,7 @@ exports[`Translator should be able to translate by Id. 1`] = `
     defaultTranslation=""
     id="foo"
     onClick={null}
+    renderer={[Function]}
     style={null}
     tag="span"
   >
@@ -242,6 +249,7 @@ exports[`Translator should fall back to the defaultTranslation if no matches are
     defaultTranslation="Bar"
     id={null}
     onClick={null}
+    renderer={[Function]}
     style={null}
     tag="span"
   >
@@ -272,6 +280,7 @@ exports[`Translator should fall back to the id if no matches are found in the tr
     defaultTranslation=""
     id="bar"
     onClick={null}
+    renderer={[Function]}
     style={null}
     tag="span"
   >
@@ -304,6 +313,7 @@ exports[`Translator should fall back to the original word if no matches are foun
     defaultTranslation=""
     id={null}
     onClick={null}
+    renderer={[Function]}
     style={null}
     tag="span"
   >
@@ -336,6 +346,7 @@ exports[`Translator should render the default translation if no children are def
     defaultTranslation="Bar"
     id={null}
     onClick={null}
+    renderer={[Function]}
     style={null}
     tag="span"
   >

@@ -1,6 +1,13 @@
 // @flow
-import React, { Children, PureComponent } from 'react';
+import React, { createContext, Children, PureComponent } from 'react';
 import type { Node } from 'react';
+
+
+
+const TranslationContext = createContext();
+const { Provider, Consumer } = TranslationContext;
+
+
 
 type LocaleTranslations = {
   [key: string]: string,
@@ -16,29 +23,25 @@ type Props = {
   translations: Translations,
 };
 
-/*
-  static childContextTypes = {
-    locale: string,
-    translations: object,
-  }
+type State = {
+  translations: Translations,
+};
 
-    getChildContext() {
-    return {
-      locale: this.locale,
-      translations: this.translations,
-    };
-  }
-  */
-
-class Rosetta extends PureComponent<Props> {
+class TranslationProvider extends PureComponent<Props, State> {
   static defaultProps = {
     locale: null,
   }
 
-  defaultLocale = 'en';
+  /**
+   * 
+   */
+  defaultLocale = 'en'
 
-  get locale(): string {
-    const { locale } = this.props;
+  /**
+   * 
+   * @param {*} param0 
+   */
+  getLocale({ locale }): string {
     let ret = locale;
 
     // if the locale isn't defined as a prop,
@@ -47,8 +50,7 @@ class Rosetta extends PureComponent<Props> {
       ret = navigator.languages ? navigator.languages[0] : navigator.language;
     }
 
-    // if the locale is STILL unknown, just fallback
-    // to english bcause that is what I speak
+    // if the locale is STILL unknown, fallback to the default
     if (!ret) {
       ret = this.defaultLocale;
     }
@@ -57,14 +59,18 @@ class Rosetta extends PureComponent<Props> {
     return ret;
   }
 
+  /**
+   * 
+   */
   get translations(): LocaleTranslations {
+    const locale = this.getLocale(props)
     const { translations } = this.props;
     return translations[this.locale] || translations[this.locale.split('-')[0]] || {};
   }
 
   render() {
-    return Children.only(this.props.children);
+    return (
+      <Provider value={this.state}>{this.props.children}</Provider>
+    );
   }
 }
-
-export default Rosetta;
